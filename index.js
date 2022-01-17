@@ -15,7 +15,8 @@
 function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
-console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
+
+// console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
 
 // ⭐️ Example Challenge END ⭐️
 
@@ -84,8 +85,7 @@ function inning(){
     let randomScore=Math.floor(Math.random()*2);
     return randomScore; 
 }
-
-// Ex Console.log
+// Ex Console.log_Output: Random numerical score value of 0, 1, or 2
 // console.log(inning());
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
@@ -102,9 +102,21 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+//Answer_Passed (SV needed)
+function finalScore(inningCB,inningNum){
+  let homeScore = 0;
+  let awayScore = 0;
+  for (let i = 0; i < inningNum; i++){
+    homeScore = homeScore + inningCB();
+    awayScore = awayScore + inningCB();
+  }
+  return {
+    Home: homeScore,
+    Away: awayScore
+  }
 }
+// Ex Console.log_Output:{Home:Random Score, Away:Random Score}
+// console.log(finalScore(inning, 9))
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
