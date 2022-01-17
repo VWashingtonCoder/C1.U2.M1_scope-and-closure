@@ -1,5 +1,4 @@
-// ⭐️ Example Challenge START ⭐️
-
+// ⭐️ Example Challenge START ⭐️ 
 /**Example Task : processFirstItem()
  * This example shows how you might go about solving the rest of the tasks
  * 
@@ -28,7 +27,7 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+
   2. Which of the two uses a closure? How can you tell?
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
@@ -52,6 +51,24 @@ function counter2() {
   return count++;
 }
 
+/* Answers
+  1. What is the difference between counter1 and counter2?
+    - In counter1, the count variable is declared in the counterMaker function's local scope. In counter2, the count variable is located in the 
+    global scope. 
+
+  2. Which of the two uses a closure? How can you tell?
+    - The second (counter2) uses a closure. This can be seen because the count variable has to reach outside of the counter2() function's scope in
+    order to reference the value set at the global scope's declaration of count.
+
+  3. In what scenario would the counter1 code be preferable? In what scenario would 
+     counter2 be better?
+     - counter1's code would be preferable in scenarios where any of the variables used in the function will be exclusive to that function alone.
+     In counter1, the count variable is only being referenced in this count function which would suggest there is no other need to call on
+     the count variable outside of the counterMaker() function's scope. 
+     - counter2's code would be preferable in scenarios where the variable (count) being called upon will be reused later on in the code. In 
+     counter2, the count variable is declared in the global scope, meaning if another function was added (ex: subtraction), it could also call 
+     upon the same count variable without it having to be defined in each function exclusively. 
+*/
 
 /* ⚾️⚾️⚾️ Task 2: inning() ⚾️⚾️⚾️
 Use the inning function below to do the following:
@@ -62,10 +79,14 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+//Answer_Passed
+function inning(){
+    let randomScore=Math.floor(Math.random()*2);
+    return randomScore; 
 }
 
+// Ex Console.log
+// console.log(inning());
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
